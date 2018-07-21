@@ -1,0 +1,23 @@
+{namespace mvhs=RGU\MetaseoVhs\ViewHelpers}
+
+<mvhs:canonical><f:uri.action arguments="{aID: association.id}" action="detailAssociation" /></mvhs:canonical>
+
+<mvhs:pageTitle><f:format.stripTags><f:render partial="Title/Association" arguments="{association: association}"/></f:format.stripTags></mvhs:pageTitle>
+<mvhs:metaTag key="description"><f:format.crop maxCharacters="225"><f:format.stripTags>{association.description}</f:format.stripTags></f:format.crop></mvhs:metaTag>
+<mvhs:metaTag key="keywords">Vereinigung,{association.name},{association.category.name}<f:for each="{association.repertoires}" as="repertoire">,{repertoire.name}</f:for><f:if condition="{association.repertoireExtra}">{announcement.association.repertoireExtra}</f:if></mvhs:metaTag>
+<mvhs:metaTag key="author">{association.name}</mvhs:metaTag>
+
+<mvhs:openGraphTag key="title"><f:format.stripTags><f:render partial="Title/Association" arguments="{association: association}"/></f:format.stripTags></mvhs:openGraphTag>
+
+<f:if condition="{association.urlEmblemFile}">
+  <f:then>
+    <mvhs:openGraphImage image="{association.urlEmblemFile}" absolute="1" alt="{association.name}"/>
+  </f:then>
+  <f:else>
+    <f:if condition="{association.urlPhotoFile}">
+      <mvhs:openGraphImage image="{association.urlPhotoFile}" absolute="1" alt="{association.name}"/>
+    </f:if>
+  </f:else>
+</f:if>
+
+<mvhs:openGraphTag key="type">article</mvhs:openGraphTag>

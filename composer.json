@@ -1,0 +1,40 @@
+{
+  "name": "rgu/metaseo-dvoconnector",
+  "version": "1.0.0",
+  "type": "typo3-cms-extension",
+  "description": "Integrate metaseo in the dvoconnector extension",
+  "autoload": {
+    "psr-4": {
+      "RGU\\MetaseoDvoconnector\\": "Classes/"
+    }
+  },
+  "keywords": [
+    "TYPO3 CMS",
+    "Metaseo",
+    "Dvoconnector",
+    "Extbase"
+  ],
+  "homepage": "https://github.com/codebobbly/metaseo_dvoconnector",
+  "authors": [
+    {
+      "name": "codebobbly",
+      "role": "Developer",
+      "homepage": "https://github.com/codebobbly"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": ">=7.6.0",
+    "webdevops/metaseo": ">=3.0.0",
+    "rgu/dvoconnector": ">=1.0.0",
+    "rgu/metaseo-vhs": ">=1.0.0"
+  },
+  "replace": {
+    "metaseo-dvoconnector": "self.version",
+    "typo3-ter/metaseo-dvoconnector": "self.version"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}

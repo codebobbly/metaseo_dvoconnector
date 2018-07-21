@@ -1,0 +1,4 @@
+{namespace mvhs=RGU\MetaseoVhs\ViewHelpers}
+
+<mvhs:canonical><f:uri.action arguments="{aID: association.id}" action="ListAnnouncements" /></mvhs:canonical>
+<mvhs:pageTitle>Meldungen - <f:format.stripTags><f:render partial="Title/Association" arguments="{association: association}"/></f:format.stripTags></mvhs:pageTitle>

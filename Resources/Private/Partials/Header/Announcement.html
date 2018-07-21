@@ -1,0 +1,17 @@
+{namespace mvhs=RGU\MetaseoVhs\ViewHelpers}
+
+<mvhs:canonical><f:uri.action arguments="{aID: announcement.association.id, anID: announcement.id}" action="detailAnnouncement" /></mvhs:canonical>
+
+<mvhs:pageTitle><f:format.stripTags><f:render partial="Title/Announcement" arguments="{announcement: announcement}"/></f:format.stripTags></mvhs:pageTitle>
+<mvhs:metaTag key="description"><f:format.crop maxCharacters="225"><f:format.stripTags>{announcement.text}</f:format.stripTags></f:format.crop></mvhs:metaTag>
+<mvhs:metaTag key="keywords">Meldung,{announcement.association.name},{announcement.association.category.name}<f:for each="{announcement.association.repertoires}" as="repertoire">,{repertoire.name}</f:for><f:if condition="{announcement.association.repertoireExtra}">{announcement.association.repertoireExtra}</f:if></mvhs:metaTag>
+<mvhs:metaTag key="author">{announcement.association.name}</mvhs:metaTag>
+<mvhs:metaTag key="date"><f:format.date format="c">{announcement.createdDate}</f:format.date></mvhs:metaTag>
+
+<mvhs:openGraphTag key="title"><f:format.stripTags><f:render partial="Title/Announcement" arguments="{announcement: announcement}"/></f:format.stripTags></mvhs:openGraphTag>
+
+<f:if condition="{announcement.imageSourceFile}">
+  <mvhs:openGraphImage image="{announcement.imageSourceFile}" alt="{announcement.imageTitle}" absolute="1"/>
+</f:if>
+
+<mvhs:openGraphTag key="type">article</mvhs:openGraphTag>

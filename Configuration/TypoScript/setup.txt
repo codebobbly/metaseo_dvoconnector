@@ -1,0 +1,11 @@
+plugin.tx_dvoconnector {
+
+	view {
+
+		partialRootPaths {
+			25 = EXT:metaseo_dvoconnector/Resources/Private/Partials/
+		}
+
+	}
+
+}

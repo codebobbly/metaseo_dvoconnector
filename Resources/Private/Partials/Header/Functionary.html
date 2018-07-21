@@ -1,0 +1,19 @@
+{namespace mvhs=RGU\MetaseoVhs\ViewHelpers}
+
+<mvhs:canonical><f:uri.action arguments="{aID: functionary.association.id, fID: functionary.id}" action="detailFunctionary" /></mvhs:canonical>
+
+<mvhs:pageTitle><f:format.stripTags><f:render partial="Title/Functionary" arguments="{functionary: functionary}"/></f:format.stripTags></mvhs:pageTitle>
+<mvhs:metaTag key="description"><f:format.crop maxCharacters="225"><f:format.stripTags>{functionary.portrait}</f:format.stripTags></f:format.crop></mvhs:metaTag>
+<mvhs:metaTag key="keywords">Funktionär,{functionary.role},{functionary.association.name},{functionary.association.category.name}<f:for each="{functionary.association.repertoires}" as="repertoire">,{repertoire.name}</f:for><f:if condition="{functionary.association.repertoireExtra}">{functionary.association.repertoireExtra}</f:if></mvhs:metaTag>
+<mvhs:metaTag key="author">{functionary.association.name}</mvhs:metaTag>
+
+<mvhs:openGraphTag key="title"><f:format.stripTags><f:render partial="Title/Functionary" arguments="{functionary: functionary}"/></f:format.stripTags></mvhs:openGraphTag>
+
+<f:if condition="{functionary.photoSourceFile}">
+  <mvhs:openGraphImage image="{functionary.photoSourceFile}" absolute="1" alt="{functionary.firstName} {functionary.lastName}"/>
+</f:if>
+
+<mvhs:customOpenGraphTag key="profile:first_name">{functionary.firstName}</mvhs:customOpenGraphTag>
+<mvhs:customOpenGraphTag key="profile:last_name">{functionary.lastName}</mvhs:customOpenGraphTag>
+
+<mvhs:openGraphTag key="type">profile</mvhs:openGraphTag>
