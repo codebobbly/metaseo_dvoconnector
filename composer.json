@@ -28,7 +28,6 @@
   ],
   "require": {
     "typo3/cms-core": ">=7.6.0",
-    "webdevops/metaseo": ">=3.0.0",
     "rgu/dvoconnector": ">=1.0.0",
     "rgu/metaseo-vhs": ">=1.0.0"
   },
