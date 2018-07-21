@@ -31,6 +31,15 @@
     "rgu/dvoconnector": ">=1.0.0",
     "rgu/metaseo-vhs": ">=1.0.0"
   },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.0",
+    "nimut/testing-framework": ">=1.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "RGU\\MetaseoDvoconnector\\Tests\\": "Tests"
+    }
+  },
   "replace": {
     "metaseo-dvoconnector": "self.version",
     "typo3-ter/metaseo-dvoconnector": "self.version"
