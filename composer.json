@@ -40,10 +40,6 @@
       "RGU\\MetaseoDvoconnector\\Tests\\": "Tests"
     }
   },
-  "replace": {
-    "rgu/metaseo-dvoconnector": "self.version",
-    "typo3-ter/metaseo-dvoconnector": "self.version"
-  },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0.x-dev"
