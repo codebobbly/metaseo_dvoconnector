@@ -41,7 +41,7 @@
     }
   },
   "replace": {
-    "metaseo-dvoconnector": "self.version",
+    "rgu/metaseo-dvoconnector": "self.version",
     "typo3-ter/metaseo-dvoconnector": "self.version"
   },
   "extra": {
